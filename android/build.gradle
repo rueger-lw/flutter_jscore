@@ -2,32 +2,34 @@ group 'com.knoyo.flutter_jscore'
 version '1.0-SNAPSHOT'
 
 buildscript {
-    ext.kotlin_version = '1.9.23'
+    ext.kotlin_version = '2.2.20'
     repositories {
         google()
-        jcenter()
+        mavenCentral()
+
+//        jcenter()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath 'com.android.tools.build:gradle:9.1.0'
+//        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
 rootProject.allprojects {
     repositories {
         google()
-        jcenter()
+//        jcenter()
+        mavenCentral()
     }
 }
 
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
 
 android {
     compileSdkVersion 34
 
-    namespace = "com.knoyo.flutter_jscore"
+    namespace "com.knoyo.flutter_jscore"
     
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -39,8 +41,17 @@ android {
     lintOptions {
         disable 'InvalidPackage'
     }
-}
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
+    }
+}
+kotlin {
+    compilerOptions {
+        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_21
+    }
+}
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

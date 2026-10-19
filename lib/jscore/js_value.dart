@@ -2,11 +2,8 @@ import 'dart:ffi';
 
 import 'package:ffi/ffi.dart';
 import 'package:flutter_jscore/flutter_jscore.dart';
-import 'package:flutter_jscore/jscore/js_class.dart';
-import 'package:flutter_jscore/jscore/js_string.dart';
 
 import '../binding/js_value_ref.dart' as JSValueRef;
-import 'js_object.dart';
 
 /// enum JSType
 /// A constant identifying the type of a JSValue.

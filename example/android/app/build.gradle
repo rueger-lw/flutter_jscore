@@ -49,7 +49,7 @@ android {
 
     defaultConfig {
         applicationId "com.knoyo.flutter_jscore_example"
-        minSdkVersion 23
+        minSdkVersion flutter.minSdkVersion
         targetSdkVersion 34
         versionCode 122
         versionName "1.0.0"
@@ -65,12 +65,12 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = '11'
+        jvmTarget = "21"
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
 }
 

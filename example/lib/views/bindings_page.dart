@@ -1,7 +1,6 @@
 import 'dart:ffi';
 import 'dart:typed_data';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_jscore/jscore_bindings.dart';
 import 'package:ffi/ffi.dart';
